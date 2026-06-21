@@ -1,0 +1,14 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "routes": [
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/kreativni_tim", "dest": "/kreativni_tim.html" },
+    { "src": "/izdanja", "dest": "/izdanja.html" },
+    { "src": "/projekti", "dest": "/projekti.html" },
+    { "src": "/promocije", "dest": "/promocije.html" },
+    { "src": "/info", "dest": "/info.html" },
+    { "src": "/kontakt", "dest": "/kontakt.html" },
+    { "src": "/(.*)", "dest": "/$1" }
+  ]
+}
