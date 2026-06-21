@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kreativna radionica Balkan – Izdavaštvo knjiga, Beograd</title>
   <meta name="description" content="Kreativna radionica Balkan je nevladina neprofitna organizacija iz Beograda koja pomaže autorima da objave knjige, organizuje književne večeri, promocije i konkurse za zbornike.">
-  <meta name="keywords" content="kreativna radionica balkan, izdavaštvo knjiga Beograd, objava knjige, književne promocije, zbornici, poezija, proza, KR Balkan">
+  <meta name="keywords" content="kreativna radionica balkan, izdavaštvo knjiga Beograd, objava knjige, književne promocije, zbornici, poezija, proza">
   <meta name="author" content="Kreativna radionica Balkan">
   <meta property="og:title" content="Kreativna radionica Balkan – Izdavaštvo knjiga">
   <meta property="og:description" content="Pomažemo autorima da objave knjige. Beograd i dijaspora. Zbornici, promocije, međunarodna saradnja.">
@@ -15,540 +15,62 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
-
+  <link rel="stylesheet" href="style.css">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --ink:      #1a1a2e;
-      --paper:    #faf8f3;
-      --cream:    #f0ece0;
-      --gold:     #b8860b;
-      --gold-lt:  #d4a017;
-      --rust:     #8b3a3a;
-      --mid:      #5a5a72;
-      --rule:     #d9d4c4;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Source Sans 3', sans-serif;
-      background: var(--paper);
-      color: var(--ink);
-      font-size: 17px;
-      line-height: 1.7;
-    }
-
-    /* ── HEADER ── */
-    header {
-      background: var(--ink);
-      padding: 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.3);
-    }
-
-    .header-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 24px;
-      height: 64px;
-    }
-
-    .logo-text {
-      font-family: 'Playfair Display', serif;
-      color: var(--gold-lt);
-      font-size: 1.15rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      text-decoration: none;
-      line-height: 1.2;
-    }
-
-    .logo-text span {
-      display: block;
-      font-size: 0.7rem;
-      color: #aaa;
-      font-weight: 300;
-      font-family: 'Source Sans 3', sans-serif;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    nav { display: flex; gap: 4px; }
-
-    nav a {
-      color: #ccc;
-      text-decoration: none;
-      font-size: 0.82rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      padding: 8px 12px;
-      border-radius: 4px;
-      transition: color 0.2s, background 0.2s;
-    }
-
-    nav a:hover { color: var(--gold-lt); background: rgba(255,255,255,0.06); }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 4px;
-      background: none;
-      border: none;
-    }
-
-    .hamburger span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: #ccc;
-      transition: all 0.3s;
-    }
-
-    /* ── HERO ── */
-    .hero {
-      background: var(--ink);
-      color: white;
-      padding: 72px 24px 80px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url('dugmici/banner.jpg') center/cover no-repeat;
-      opacity: 0.12;
-    }
-
-    .hero-inner { position: relative; max-width: 720px; margin: 0 auto; }
-
-    .hero-eyebrow {
-      font-size: 0.78rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--gold-lt);
-      margin-bottom: 20px;
-    }
-
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      line-height: 1.2;
-      margin-bottom: 24px;
-      font-weight: 700;
-    }
-
-    .hero-lead {
-      font-size: 1.1rem;
-      color: #c8c8d8;
-      max-width: 580px;
-      margin: 0 auto 36px;
-    }
-
-    .hero-cta {
-      display: inline-flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 28px;
-      border-radius: 4px;
-      text-decoration: none;
-      font-size: 0.9rem;
-      letter-spacing: 0.04em;
-      transition: all 0.2s;
-      font-weight: 600;
-    }
-
-    .btn-primary {
-      background: var(--gold);
-      color: white;
-    }
-
-    .btn-primary:hover { background: var(--gold-lt); }
-
-    .btn-outline {
-      border: 1px solid rgba(255,255,255,0.3);
-      color: white;
-    }
-
-    .btn-outline:hover { border-color: var(--gold-lt); color: var(--gold-lt); }
-
-    /* ── SECTIONS ── */
-    section { padding: 64px 24px; }
-
-    .section-inner { max-width: 1100px; margin: 0 auto; }
-
-    .section-label {
-      font-size: 0.75rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 10px;
-      font-weight: 600;
-    }
-
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-      margin-bottom: 16px;
-      line-height: 1.25;
-    }
-
-    .section-lead {
-      color: var(--mid);
-      max-width: 640px;
-      margin-bottom: 48px;
-      font-size: 1.05rem;
-    }
-
-    .rule { border: none; border-top: 1px solid var(--rule); margin: 0; }
-
-    /* ── O NAMA ── */
-    .about { background: var(--cream); }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px 64px;
-      align-items: start;
-    }
-
-    .about-text p { color: var(--mid); margin-bottom: 16px; }
-
-    .about-stat-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 40px;
-      padding-top: 40px;
-      border-top: 1px solid var(--rule);
-    }
-
-    .stat { text-align: center; }
-
-    .stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.4rem;
-      color: var(--gold);
-      line-height: 1;
-    }
-
-    .stat-label { font-size: 0.82rem; color: var(--mid); margin-top: 6px; text-transform: uppercase; letter-spacing: 0.06em; }
-
-    .about-goals h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-    }
-
-    .goal-list { list-style: none; }
-
-    .goal-list li {
-      display: flex;
-      gap: 14px;
-      margin-bottom: 18px;
-      align-items: flex-start;
-    }
-
-    .goal-list li::before {
-      content: '◆';
-      color: var(--gold);
-      font-size: 0.6rem;
-      margin-top: 7px;
-      flex-shrink: 0;
-    }
-
-    /* ── PROJEKTI ── */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 28px;
-    }
-
-    .book-card {
-      background: white;
-      border: 1px solid var(--rule);
-      border-radius: 6px;
-      overflow: hidden;
-      transition: box-shadow 0.2s, transform 0.2s;
-    }
-
-    .book-card:hover {
-      box-shadow: 0 8px 28px rgba(0,0,0,0.1);
-      transform: translateY(-3px);
-    }
-
-    .book-cover {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      object-position: top;
-      display: block;
-      background: var(--cream);
-    }
-
-    .book-body { padding: 20px 20px 16px; }
-
-    .book-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.05rem;
-      margin-bottom: 6px;
-      line-height: 1.3;
-    }
-
-    .book-author {
-      font-size: 0.85rem;
-      color: var(--mid);
-      margin-bottom: 14px;
-    }
-
-    .book-links { display: flex; flex-wrap: wrap; gap: 8px; }
-
-    .book-link {
-      font-size: 0.78rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--gold);
-      text-decoration: none;
-      border: 1px solid var(--gold);
-      padding: 4px 10px;
-      border-radius: 3px;
-      transition: all 0.2s;
-    }
-
-    .book-link:hover { background: var(--gold); color: white; }
-
-    /* ── INFO / VESTI ── */
-    .news { background: var(--cream); }
-
-    .news-list { display: flex; flex-direction: column; gap: 0; }
-
-    .news-item {
-      display: flex;
-      gap: 20px;
-      padding: 24px 0;
-      border-bottom: 1px solid var(--rule);
-      align-items: flex-start;
-    }
-
-    .news-avatar {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      object-fit: cover;
-      flex-shrink: 0;
-      background: var(--rule);
-    }
-
-    .news-content {}
-    .news-content strong { font-size: 0.95rem; }
-    .news-content p { color: var(--mid); font-size: 0.9rem; margin-top: 4px; }
-
-    .news-link {
-      display: inline-block;
-      margin-top: 8px;
-      font-size: 0.82rem;
-      color: var(--gold);
-      text-decoration: none;
-    }
-
-    .news-link:hover { text-decoration: underline; }
-
-    /* ── KONTAKT ── */
-    .contact { background: var(--ink); color: white; }
-
-    .contact .section-title { color: white; }
-    .contact .section-lead { color: #aaa; }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-    }
-
-    .contact-info { display: flex; flex-direction: column; gap: 24px; }
-
-    .contact-block {}
-
-    .contact-block h4 {
-      font-size: 0.78rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--gold-lt);
-      margin-bottom: 6px;
-    }
-
-    .contact-block a { color: #ddd; text-decoration: none; }
-    .contact-block a:hover { color: var(--gold-lt); }
-
-    .social-row { display: flex; gap: 16px; margin-top: 32px; }
-
-    .social-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: #aaa;
-      text-decoration: none;
-      font-size: 0.88rem;
-      transition: color 0.2s;
-    }
-
-    .social-link:hover { color: var(--gold-lt); }
-
-    .bank-box {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 6px;
-      padding: 24px;
-    }
-
-    .bank-box h4 {
-      font-size: 0.78rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--gold-lt);
-      margin-bottom: 16px;
-    }
-
-    .bank-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.08); font-size: 0.88rem; }
-    .bank-row:last-child { border-bottom: none; }
-    .bank-row span:first-child { color: #888; }
-    .bank-row span:last-child { color: white; font-weight: 600; }
-
-    /* ── FOOTER ── */
-    footer {
-      background: #0f0f1e;
-      color: #666;
-      text-align: center;
-      padding: 24px;
-      font-size: 0.82rem;
-    }
-
-    footer a { color: #888; text-decoration: none; }
-    footer a:hover { color: var(--gold-lt); }
-
-    /* ── MOBILE NAV ── */
-    @media (max-width: 768px) {
-      .hamburger { display: flex; }
-
-      nav {
-        display: none;
-        position: absolute;
-        top: 64px;
-        left: 0;
-        right: 0;
-        background: var(--ink);
-        flex-direction: column;
-        padding: 12px 0;
-        border-top: 1px solid rgba(255,255,255,0.1);
-      }
-
-      nav.open { display: flex; }
-      nav a { padding: 12px 24px; font-size: 0.9rem; }
-
-      .about-grid { grid-template-columns: 1fr; gap: 32px; }
-      .about-stat-row { grid-template-columns: repeat(3, 1fr); }
-      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-      .projects-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
-    }
-
-    @media (max-width: 480px) {
-      .about-stat-row { grid-template-columns: 1fr 1fr; }
-      .stat:last-child { grid-column: span 2; }
-    }
+    /* Index-only extras */
+    .about-section { background: var(--cream); }
+    .news-section { background: var(--cream); }
   </style>
 </head>
 <body>
 
-<!-- ══ HEADER ══ -->
 <header>
   <div class="header-inner">
-    <a href="#" class="logo-text">
-      Kreativna radionica Balkan
-      <span>Beograd · Osnivanje 2014.</span>
-    </a>
-    <button class="hamburger" id="hamburger" aria-label="Meni">
-      <span></span><span></span><span></span>
-    </button>
+    <a href="index.html" class="logo-text">Kreativna radionica Balkan<span>Beograd · Osnivanje 2014.</span></a>
+    <button class="hamburger" id="hamburger" aria-label="Meni"><span></span><span></span><span></span></button>
     <nav id="nav">
-      <a href="#o-nama">O nama</a>
-      <a href="#projekti">Projekti</a>
-      <a href="#vesti">Vesti</a>
-      <a href="#kontakt">Kontakt</a>
+      <a href="index.html" class="active">Naslovna</a>
       <a href="kreativni_tim.html">Tim</a>
       <a href="izdanja.html">Izdanja</a>
+      <a href="projekti.html">Projekti</a>
       <a href="promocije.html">Promocije</a>
+      <a href="info.html">Info</a>
+      <a href="kontakt.html">Kontakt</a>
     </nav>
   </div>
 </header>
 
-<!-- ══ HERO ══ -->
 <section class="hero">
   <div class="hero-inner">
     <p class="hero-eyebrow">Nevladina · Neprofitna · Od 2014. godine</p>
     <h1>Pomažemo autorima<br>da pronađu svoje čitaoce</h1>
-    <p class="hero-lead">
-      Kreativna radionica Balkan objavljuje knjige, organizuje književne promocije i zbornike — u Srbiji, regionu i dijaspori.
-    </p>
+    <p class="hero-lead">Kreativna radionica Balkan objavljuje knjige, organizuje književne promocije i zbornike — u Srbiji, regionu i dijaspori.</p>
     <div class="hero-cta">
-      <a href="#projekti" class="btn btn-primary">Pogledaj projekte</a>
-      <a href="#kontakt" class="btn btn-outline">Kako postati autor</a>
+      <a href="projekti.html" class="btn btn-primary">Pogledaj projekte</a>
+      <a href="kontakt.html" class="btn btn-outline">Kako postati autor</a>
     </div>
   </div>
 </section>
 
 <hr class="rule">
 
-<!-- ══ O NAMA ══ -->
-<section class="about" id="o-nama">
+<section class="about-section">
   <div class="section-inner">
     <div class="about-grid">
       <div class="about-text">
         <p class="section-label">Ko smo</p>
         <h2 class="section-title">Čuvamo reč i podržavamo autore</h2>
-        <p>
-          Kreativna radionica Balkan je nevladina i neprofitna organizacija, osnovana na neodređeno vreme radi ostvarivanja ciljeva iz oblasti promocije umetnosti, posebno izdavaštva knjiga.
-        </p>
-        <p>
-          Posebnu pažnju posvećujemo autorima kojima je potrebna stručna pomoć oko izdavanja — od prvog rukopisa do promocije, sajmova knjiga i međunarodne saradnje.
-        </p>
-        <p>
-          Naši autori dolaze iz Srbije, regiona i dijaspore — Švajcarska, Australija, Bosna i Hercegovina, Slovenija i dalje.
-        </p>
-
-        <div class="about-stat-row">
-          <div class="stat">
-            <div class="stat-num">10+</div>
-            <div class="stat-label">Godina rada</div>
-          </div>
-          <div class="stat">
-            <div class="stat-num">25+</div>
-            <div class="stat-label">Zbornika i knjiga</div>
-          </div>
-          <div class="stat">
-            <div class="stat-num">300+</div>
-            <div class="stat-label">Autora</div>
-          </div>
+        <p>Kreativna radionica Balkan je nevladina i neprofitna organizacija, osnovana na neodređeno vreme radi ostvarivanja ciljeva iz oblasti promocije umetnosti, posebno izdavaštva knjiga.</p>
+        <p>Posebnu pažnju posvećujemo autorima kojima je potrebna stručna pomoć oko izdavanja — od prvog rukopisa do promocije, sajmova knjiga i međunarodne saradnje.</p>
+        <p>Naši autori dolaze iz Srbije, regiona i dijaspore — Švajcarska, Australija, Bosna i Hercegovina, Slovenija i dalje.</p>
+        <div class="stat-row">
+          <div class="stat"><div class="stat-num">10+</div><div class="stat-label">Godina rada</div></div>
+          <div class="stat"><div class="stat-num">25+</div><div class="stat-label">Zbornika i knjiga</div></div>
+          <div class="stat"><div class="stat-num">300+</div><div class="stat-label">Autora</div></div>
         </div>
       </div>
-
-      <div class="about-goals">
-        <h3>Naši ciljevi</h3>
+      <div>
+        <h3 style="font-family:'Playfair Display',serif; font-size:1.2rem; margin-bottom:20px;">Naši ciljevi</h3>
         <ul class="goal-list">
           <li>Saradnja sa srodnim organizacijama u zemlji, regionu i svetu</li>
           <li>Stručno i kulturno usavršavanje autora</li>
@@ -565,14 +87,13 @@
 
 <hr class="rule">
 
-<!-- ══ PROJEKTI ══ -->
-<section id="projekti">
+<section>
   <div class="section-inner">
     <p class="section-label">Naša izdanja</p>
-    <h2 class="section-title">Projekti i zbornici</h2>
-    <p class="section-lead">Svaka knjiga je posebna priča. Ovde su neki od naših najznačajnijih projekata — od zbornika poezije i proze do individualnih autorskih dela.</p>
+    <h2 class="section-title">Najnoviji projekti i zbornici</h2>
+    <p class="section-lead">Izbor naših najznačajnijih projekata — od zbornika poezije i proze do individualnih autorskih dela.</p>
 
-    <div class="projects-grid">
+    <div class="books-grid">
 
       <div class="book-card">
         <img class="book-cover" src="projekti/zbornik-humora-i-satire-cirilica.jpg" alt="Zbornik humora i satire 2024" loading="lazy">
@@ -581,7 +102,6 @@
           <p class="book-author">Grupa autora · 2024.</p>
           <div class="book-links">
             <a class="book-link" href="projekti/zbornik humora i satire 2024.pdf">Knjiga</a>
-            <a class="book-link" href="projekti/konkurs - zbornik humora i satire.pdf">Konkurs</a>
             <a class="book-link" href="zbornik-humora-i-satire_autori.html">Autori</a>
           </div>
         </div>
@@ -594,7 +114,6 @@
           <p class="book-author">Grupa autora</p>
           <div class="book-links">
             <a class="book-link" href="projekti/zbornik nade.pdf">Knjiga</a>
-            <a class="book-link" href="projekti/konkurs za zbornik nade.pdf">Konkurs</a>
             <a class="book-link" href="zbornik-nade_autori.html">Autori</a>
           </div>
         </div>
@@ -607,371 +126,159 @@
           <p class="book-author">Grupa autora</p>
           <div class="book-links">
             <a class="book-link" href="projekti/zbornik-meditacija_glasanje.pdf">Knjiga</a>
-            <a class="book-link" href="projekti/konkurs - zbornik meditacija.pdf">Konkurs</a>
             <a class="book-link" href="zbornik-meditacija_autori.html">Autori</a>
           </div>
         </div>
       </div>
 
       <div class="book-card">
-        <img class="book-cover" src="izdanja/zvezde-iznad-mora.jpg" alt="Zvezde iznad mora – Anđela Stefanović" loading="lazy">
+        <img class="book-cover" src="http://www.krbalkan.rs/izdanja/zvezde-iznad-mora.jpg" alt="Zvezde iznad mora" loading="lazy">
         <div class="book-body">
           <h3 class="book-title">Zvezde iznad mora</h3>
           <p class="book-author">Anđela Stefanović</p>
           <div class="book-links">
-            <a class="book-link" href="zvezde-iznad-mora(2).html">Detalji</a>
-            <a class="book-link" href="autor-andjela-stefanovic(4).html">Autor</a>
+            <a class="book-link" href="zvezde-iznad-mora.html">Detalji</a>
+            <a class="book-link" href="autor-andjela-stefanovic.html">Autor</a>
           </div>
         </div>
       </div>
 
       <div class="book-card">
-        <img class="book-cover" src="projekti/ostrvo-leptira.jpg" alt="Ostrvo leptira – Anđela Stefanović" loading="lazy">
-        <div class="book-body">
-          <h3 class="book-title">Ostrvo leptira</h3>
-          <p class="book-author">Anđela Stefanović</p>
-          <div class="book-links">
-            <a class="book-link" href="ostrvo-leptira(2).html">Detalji</a>
-            <a class="book-link" href="donatori-pojedinci_ostrvo-leptira.html">Donatori</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="book-card">
-        <img class="book-cover" src="izdanja/slomljeni-negativci.jpg" alt="Slomljeni negativci – Stefan Vučevski" loading="lazy">
+        <img class="book-cover" src="http://www.krbalkan.rs/izdanja/slomljeni-negativci.jpg" alt="Slomljeni negativci" loading="lazy">
         <div class="book-body">
           <h3 class="book-title">Slomljeni negativci</h3>
           <p class="book-author">Stefan Vučevski</p>
           <div class="book-links">
-            <a class="book-link" href="slomljeni-negativci(2).html">Detalji</a>
-            <a class="book-link" href="autor-stefan-vucevski_2(2).html">Autor</a>
+            <a class="book-link" href="slomljeni-negativci.html">Detalji</a>
+            <a class="book-link" href="autor-stefan-vucevski_2.html">Autor</a>
           </div>
         </div>
       </div>
 
       <div class="book-card">
-        <img class="book-cover" src="projekti/najzabavniji-univerzum.jpg" alt="Najzabavniji univerzum – Stefan Vučevski" loading="lazy">
-        <div class="book-body">
-          <h3 class="book-title">Najzabavniji univerzum</h3>
-          <p class="book-author">Stefan Vučevski</p>
-          <div class="book-links">
-            <a class="book-link" href="najzabavniji-univerzum(2).html">Detalji</a>
-            <a class="book-link" href="autor-stefan-vucevski_2(2).html">Autor</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="book-card">
-        <img class="book-cover" src="projekti/milena.jpg" alt="Milena – Rajko R. Dvizac" loading="lazy">
-        <div class="book-body">
-          <h3 class="book-title">Milena</h3>
-          <p class="book-author">Rajko R. Dvizac</p>
-          <div class="book-links">
-            <a class="book-link" href="milena(2).html">Detalji</a>
-            <a class="book-link" href="autor-rajko-dvizac(5).html">Autor</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="book-card">
-        <img class="book-cover" src="izdanja/kako-sam-smrsao-60-kila.jpg" alt="Kako sam smršao 60 kila – Miodrag Stošić" loading="lazy">
+        <img class="book-cover" src="http://www.krbalkan.rs/izdanja/kako-sam-smrsao-60-kila.jpg" alt="Kako sam smršao 60 kila" loading="lazy">
         <div class="book-body">
           <h3 class="book-title">Kako sam smršao 60 kila</h3>
           <p class="book-author">Miodrag Stošić</p>
           <div class="book-links">
-            <a class="book-link" href="kako-sam-smrsao-60-kila(2).html">Detalji</a>
-            <a class="book-link" href="autor-miodrag-stosic(4).html">Autor</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="book-card">
-        <img class="book-cover" src="izdanja/salila-sam-se,-budalo.jpg" alt="Šalila sam se, budalo – Ana Jovanović" loading="lazy">
-        <div class="book-body">
-          <h3 class="book-title">Šalila sam se, budalo</h3>
-          <p class="book-author">Ana Jovanović</p>
-          <div class="book-links">
-            <a class="book-link" href="salila-sam-se,-budalo(2).html">Detalji</a>
-            <a class="book-link" href="autor-ana-jovanovic.html">Autor</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="book-card">
-        <img class="book-cover" src="projekti/zbornik-savremene-ljubavne-poezije.jpg" alt="Zbornik savremene ljubavne poezije" loading="lazy">
-        <div class="book-body">
-          <h3 class="book-title">Zbornik savremene ljubavne poezije</h3>
-          <p class="book-author">Grupa autora</p>
-          <div class="book-links">
-            <a class="book-link" href="projekti/zbornik savremene ljubavne poezije.pdf">Knjiga</a>
-            <a class="book-link" href="zbornik-savremene-ljubavne-poezije_autori.html">Autori</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="book-card">
-        <img class="book-cover" src="projekti/zbornik-cuvara-prirode.jpg" alt="Zbornik čuvara prirode" loading="lazy">
-        <div class="book-body">
-          <h3 class="book-title">Zbornik čuvara prirode</h3>
-          <p class="book-author">Grupa autora · 2020.</p>
-          <div class="book-links">
-            <a class="book-link" href="projekti/zbornik cuvara prirode.pdf">Knjiga</a>
-            <a class="book-link" href="zbornik-cuvara-prirode_autori.html">Autori</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="book-card">
-        <img class="book-cover" src="projekti/dela-(aleksa-santic)-dvojezicno.jpg" alt="Dela – Aleksa Šantić" loading="lazy">
-        <div class="book-body">
-          <h3 class="book-title">Dela – Aleksa Šantić</h3>
-          <p class="book-author">Dvojezično izdanje (latinica/ćirilica)</p>
-          <div class="book-links">
-            <a class="book-link" href="projekti_aleksa-santic-dela.html">Detalji</a>
-            <a class="book-link" href="autor-aleksa-santic(4).html">Autor</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="book-card">
-        <img class="book-cover" src="projekti/pecilin.jpg" alt="Pecilin – Čika Peca" loading="lazy">
-        <div class="book-body">
-          <h3 class="book-title">Pecilin</h3>
-          <p class="book-author">Čika Peca</p>
-          <div class="book-links">
-            <a class="book-link" href="pecilin.html">Detalji</a>
-            <a class="book-link" href="recenzije_pecilin.html">Recenzije</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="book-card">
-        <img class="book-cover" src="projekti/zbornik-haiku-poezije.jpg" alt="Zbornik haiku poezije" loading="lazy">
-        <div class="book-body">
-          <h3 class="book-title">Zbornik haiku poezije</h3>
-          <p class="book-author">Grupa autora</p>
-          <div class="book-links">
-            <a class="book-link" href="projekti/zbornik haiku poezije.pdf">Knjiga</a>
-            <a class="book-link" href="zbornik-haiku_poezije_autori.html">Autori</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="book-card">
-        <img class="book-cover" src="projekti/bastovanski-dnevnik--knjiga-01.jpg" alt="Baštovanski dnevnik" loading="lazy">
-        <div class="book-body">
-          <h3 class="book-title">Baštovanski dnevnik</h3>
-          <p class="book-author">Stevan Krstec Starčinski</p>
-          <div class="book-links">
-            <a class="book-link" href="bastovanski-dnevnik-knjiga1.html">Detalji</a>
-            <a class="book-link" href="stevan-projekti.html">Autor</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="book-card">
-        <img class="book-cover" src="izdanja/grad-nevidljivih-ljudi.jpg" alt="Grad nevidljivih ljudi – Violeta Penić" loading="lazy">
-        <div class="book-body">
-          <h3 class="book-title">Grad nevidljivih ljudi</h3>
-          <p class="book-author">Violeta Penić</p>
-          <div class="book-links">
-            <a class="book-link" href="grad-nevidljivih-ljudi(2).html">Detalji</a>
-            <a class="book-link" href="autor-violeta-penic(4).html">Autor</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="book-card">
-        <img class="book-cover" src="projekti/tajni-mali-grad.jpg" alt="Tajni mali grad – Rajko R. Dvizac" loading="lazy">
-        <div class="book-body">
-          <h3 class="book-title">Tajni mali grad</h3>
-          <p class="book-author">Rajko R. Dvizac</p>
-          <div class="book-links">
-            <a class="book-link" href="tajni-mali-grad(2).html">Detalji</a>
-            <a class="book-link" href="autor-rajko-dvizac(4).html">Autor</a>
+            <a class="book-link" href="kako-sam-smrsao-60-kila.html">Detalji</a>
+            <a class="book-link" href="autor-miodrag-stosic.html">Autor</a>
           </div>
         </div>
       </div>
 
     </div>
 
-    <p style="margin-top:40px; text-align:center;">
-      <a href="izdanja.html" class="btn btn-primary" style="background:var(--gold);">Sva izdanja →</a>
+    <p style="margin-top:32px; text-align:center;">
+      <a href="projekti.html" class="btn btn-primary">Svi projekti →</a>
+      &nbsp;
+      <a href="izdanja.html" class="btn btn-outline" style="border-color:var(--gold); color:var(--gold);">Sva izdanja →</a>
     </p>
   </div>
 </section>
 
 <hr class="rule">
 
-<!-- ══ VESTI ══ -->
-<section class="news" id="vesti">
+<section class="news-section">
   <div class="section-inner">
     <p class="section-label">Aktuelno</p>
     <h2 class="section-title">Vesti i medijski odjeci</h2>
     <p class="section-lead">Naši autori u medijima, nagrade, promocije i obaveštenja.</p>
 
-    <div class="news-list">
+    <div class="promo-grid">
 
       <div class="news-item">
-        <img class="news-avatar" src="dugmici/profile_picture1.jpg" alt="KR Balkan">
+        <img class="news-avatar" src="http://www.krbalkan.rs/dugmici/profile_picture1.jpg" alt="KR Balkan" loading="lazy">
         <div class="news-content">
           <strong>Završni račun za 2025. godinu</strong>
           <p>Objavljen godišnji finansijski izveštaj Kreativne radionice Balkan.</p>
-          <a class="news-link" href="info/zavrsni racun 2025-bilans uspeha.pdf">Bilans uspeha →</a>
-          &nbsp;
-          <a class="news-link" href="info/zavrsni racun 2025-bilans stanja.pdf">Bilans stanja →</a>
+          <a class="news-link" href="info.html">Pogledaj izveštaje →</a>
         </div>
       </div>
 
       <div class="news-item">
-        <img class="news-avatar" src="dugmici/profile_picture1.jpg" alt="KR Balkan">
+        <img class="news-avatar" src="http://www.krbalkan.rs/dugmici/profile_picture1.jpg" alt="KR Balkan" loading="lazy">
         <div class="news-content">
-          <strong>Rezultati glasanja – Zbornik meditacija (april 2025.)</strong>
-          <p>Pobednica glasanja za NAJ AUTORA je Jelena Antić. Čestitamo!</p>
-          <a class="news-link" href="info.html">Cela lista glasova →</a>
+          <strong>April 2025. – Pobednica glasanja Zbornik meditacija: Jelena Antić</strong>
+          <p>Čestitamo pobednici! Detalji o glasanju i lista svih autora na info stranici.</p>
+          <a class="news-link" href="info.html">Detalji →</a>
         </div>
       </div>
 
       <div class="news-item">
-        <img class="news-avatar" src="autori/miodrag-stosic-2(4).jpg" alt="Miodrag Stošić">
+        <img class="news-avatar" src="http://www.krbalkan.rs/autori/olivera-sestakov(4).jpg" alt="Olivera Šestakov" loading="lazy">
         <div class="news-content">
-          <strong>Miodrag Stošić – intervju "Moja nutricionistička biografija"</strong>
-          <p>Autor knjige "Kako sam smršao 60 kg" gost emisije TV KCN.</p>
-          <a class="news-link" href="https://www.youtube.com/watch?v=43dzVXLql_s" target="_blank" rel="noopener">Pogledaj intervju →</a>
+          <strong>Olivera Šestakov – književna nagrada "Milorad Kalezić"</strong>
+          <p>Nagrada za zbirku <em>Poema tečem kao reka i druge pesme</em>, 2018. godine.</p>
         </div>
       </div>
 
       <div class="news-item">
-        <img class="news-avatar" src="autori/olivera-sestakov(4).jpg" alt="Olivera Šestakov">
-        <div class="news-content">
-          <strong>Olivera Šestakov – književna nagrada "Milorad Kalezić" za 2017.</strong>
-          <p>Nagrada dodeljena za zbirku "Poema tečem kao reka i druge pesme".</p>
-        </div>
-      </div>
-
-      <div class="news-item">
-        <img class="news-avatar" src="autori/vesna-djukanovic(4).jpg" alt="Vesna Đukanović">
-        <div class="news-content">
-          <strong>Vesna Đukanović – nagrada "Čučkova knjiga" za zbirku "Radost žute lubenice"</strong>
-          <p>Nagrada dodeljena u Han Pijesku 2017. godine za zbirku kratkih priča.</p>
-          <a class="news-link" href="http://www.glassrpske.com/kultura/vijesti/Vesna-Djukanovic-dobitnik-nagrade-Cuckova-knjiga/lat/232050.html" target="_blank" rel="noopener">Glas Srpske →</a>
-        </div>
-      </div>
-
-      <div class="news-item">
-        <img class="news-avatar" src="dugmici/profile_picture1.jpg" alt="KR Balkan">
+        <img class="news-avatar" src="http://www.krbalkan.rs/dugmici/profile_picture1.jpg" alt="KR Balkan" loading="lazy">
         <div class="news-content">
           <strong>RTS: "Kreativna radionica Balkan čuva srpsku reč"</strong>
-          <p>Izveštaj sa večeri prijatelja umetnosti u organizaciji SPKD Prosvjeta, Švajcarska.</p>
+          <p>Izveštaj RTS-a sa književnih večeri u Švajcarskoj.</p>
           <a class="news-link" href="http://www.rts.rs/page/rts/ci/Dijaspora/story/1516/vesti/3133259/kreativna-radionica-balkan-cuva-srpsku-rec.html" target="_blank" rel="noopener">Ceo tekst na RTS-u →</a>
         </div>
       </div>
 
     </div>
 
-    <p style="margin-top:32px;">
-      <a href="info.html" class="btn btn-primary" style="background:var(--gold);">Sve vesti →</a>
+    <p style="margin-top:28px;">
+      <a href="info.html" class="btn btn-primary">Sve vesti →</a>
     </p>
   </div>
 </section>
 
 <hr class="rule">
 
-<!-- ══ KONTAKT ══ -->
-<section class="contact" id="kontakt">
+<section class="contact">
   <div class="section-inner">
     <p class="section-label" style="color:var(--gold-lt);">Kontaktirajte nas</p>
     <h2 class="section-title">Kako postati autor ili donator</h2>
     <p class="section-lead">Sva pitanja u vezi sa objavljivanjem knjige, konkursima i donacijama možete uputiti na sledeće adrese.</p>
 
     <div class="contact-grid">
-      <div class="contact-info">
-        <div class="contact-block">
-          <h4>Email – opšti upiti</h4>
-          <a href="mailto:info@krbalkan.rs">info@krbalkan.rs</a>
-        </div>
-        <div class="contact-block">
-          <h4>Email – marketing</h4>
-          <a href="mailto:marketing@krbalkan.rs">marketing@krbalkan.rs</a>
-        </div>
-        <div class="contact-block">
-          <h4>Email – zbornik savremene</h4>
-          <a href="mailto:zbornik.savremene@krbalkan.rs">zbornik.savremene@krbalkan.rs</a>
-        </div>
-        <div class="contact-block">
-          <h4>Telefon</h4>
-          <a href="tel:+381653318452">065 33 18 452</a><br>
-          <a href="tel:+381113318452">011 33 18 452</a>
-        </div>
-        <div class="contact-block">
-          <h4>Sajt</h4>
-          <a href="https://www.krbalkan.rs">www.krbalkan.rs</a>
-        </div>
-
+      <div style="display:flex; flex-direction:column; gap:20px;">
+        <div class="contact-block"><h4>Email – opšti upiti</h4><a href="mailto:info@krbalkan.rs">info@krbalkan.rs</a></div>
+        <div class="contact-block"><h4>Email – izdavanje knjiga</h4><a href="mailto:redakcija@krbalkan.rs">redakcija@krbalkan.rs</a></div>
+        <div class="contact-block"><h4>Email – slanje radova</h4><a href="mailto:zbornik@krbalkan.rs">zbornik@krbalkan.rs</a></div>
+        <div class="contact-block"><h4>Telefon</h4><a href="tel:+381653318452">065 33 18 452</a> · <a href="tel:+381113318452">011 33 18 452</a></div>
+        <div class="contact-block"><h4>Adresa</h4><span style="color:#ddd;">Suvopoljska 11, 11210 Beograd (Kotež)</span></div>
         <div class="social-row">
-          <a class="social-link" href="https://www.facebook.com/kreativna.radionicabalkan" target="_blank" rel="noopener">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-            Facebook
+          <a class="social-link" href="https://www.facebook.com/kreativna.radionica.balkan/" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Facebook
           </a>
-          <a class="social-link" href="https://www.youtube.com/" target="_blank" rel="noopener">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-            YouTube
+          <a class="social-link" href="https://www.instagram.com/krbalkan" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg> Instagram
           </a>
         </div>
       </div>
 
       <div class="bank-box">
         <h4>Podaci za donacije</h4>
-        <div class="bank-row">
-          <span>Primalac</span>
-          <span>Kreativna radionica Balkan</span>
-        </div>
-        <div class="bank-row">
-          <span>Banka</span>
-          <span>Komercijalna banka AD Beograd</span>
-        </div>
-        <div class="bank-row">
-          <span>Broj računa</span>
-          <span>205-205634-09</span>
-        </div>
-        <div class="bank-row">
-          <span>Svrha</span>
-          <span>DONACIJA ZA ZBORNIK</span>
-        </div>
-        <div class="bank-row">
-          <span>Iznos (Srbija)</span>
-          <span>1.200 RSD po radu</span>
-        </div>
-        <div class="bank-row">
-          <span>Iznos (inostranstvo)</span>
-          <span>10 EUR</span>
-        </div>
-        <p style="color:#888; font-size:0.82rem; margin-top:16px; line-height:1.5;">Za detaljna uputstva o uplati iz inostranstva pišite na <a href="mailto:info@krbalkan.rs" style="color:var(--gold-lt);">info@krbalkan.rs</a></p>
+        <div class="bank-row"><span>Primalac</span><span>Kreativna radionica Balkan</span></div>
+        <div class="bank-row"><span>Banka</span><span>Komercijalna banka AD Beograd</span></div>
+        <div class="bank-row"><span>Broj računa</span><span>205-205634-09</span></div>
+        <div class="bank-row"><span>Svrha</span><span>DONACIJA ZA ZBORNIK</span></div>
+        <div class="bank-row"><span>Srbija</span><span>1.200 RSD po radu</span></div>
+        <div class="bank-row"><span>Inostranstvo</span><span>10 EUR</span></div>
+        <p style="color:#888; font-size:0.8rem; margin-top:14px;">Za detaljna uputstva pišite na <a href="mailto:info@krbalkan.rs" style="color:var(--gold-lt);">info@krbalkan.rs</a></p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ FOOTER ══ -->
 <footer>
-  <p>
-    Copyright © Kreativna radionica Balkan 2014–2026. Sva prava zadržana. &nbsp;|&nbsp;
-    <a href="https://www.facebook.com/kreativna.radionicabalkan" target="_blank" rel="noopener">Facebook</a> &nbsp;|&nbsp;
-    <a href="mailto:info@krbalkan.rs">info@krbalkan.rs</a>
-  </p>
+  <p>Copyright © Kreativna radionica Balkan 2014–2026. &nbsp;|&nbsp;
+  <a href="https://www.facebook.com/kreativna.radionicabalkan" target="_blank" rel="noopener">Facebook</a> &nbsp;|&nbsp;
+  <a href="https://www.instagram.com/krbalkan" target="_blank" rel="noopener">Instagram</a> &nbsp;|&nbsp;
+  <a href="mailto:info@krbalkan.rs">info@krbalkan.rs</a></p>
 </footer>
-
 <script>
-  // Mobile nav toggle
-  const hamburger = document.getElementById('hamburger');
-  const nav = document.getElementById('nav');
-  hamburger.addEventListener('click', () => nav.classList.toggle('open'));
-
-  // Close nav on link click
-  nav.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => nav.classList.remove('open'));
-  });
+  const h=document.getElementById('hamburger'),n=document.getElementById('nav');
+  if(h) h.addEventListener('click',()=>n.classList.toggle('open'));
+  if(n) n.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>n.classList.remove('open')));
 </script>
-
 </body>
 </html>

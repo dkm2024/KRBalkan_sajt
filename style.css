@@ -19,7 +19,7 @@ nav a:hover, nav a.active { color: var(--gold-lt); background: rgba(255,255,255,
 
 /* HERO */
 .hero { background: var(--ink); color: white; padding: 72px 24px 80px; text-align: center; position: relative; overflow: hidden; }
-.hero::before { content: ''; position: absolute; inset: 0; background: url('dugmici/banner.jpg') center/cover no-repeat; opacity: 0.12; }
+.hero::before { content: ''; position: absolute; inset: 0; background: url(http://www.krbalkan.rs/'dugmici/banner.jpg') center/cover no-repeat; opacity: 0.12; }
 .hero-inner { position: relative; max-width: 720px; margin: 0 auto; }
 .hero-eyebrow { font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-lt); margin-bottom: 20px; }
 .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 5vw, 3rem); line-height: 1.2; margin-bottom: 20px; }
